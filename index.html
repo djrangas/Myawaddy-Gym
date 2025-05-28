@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myawaddy Gym</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-dumbbell"></i>
+                <span>Myawaddy Gym</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#plans">Plans</a></li>
+                <li><a href="#coaches">Coaches</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Transform Your Body<br><span class="highlight">Transform Your Life</span></h1>
+            <p class="hero-subtitle">Join Myawaddy Gym and unlock your potential with our expert coaches and premium facilities</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('plans')">
+                    <i class="fas fa-rocket"></i> Get Started
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('about')">
+                    <i class="fas fa-play"></i> Learn More
+                </button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-card">
+                <i class="fas fa-clock"></i>
+                <h3>Operating Hours</h3>
+                <p>6:00 AM - 11:00 AM<br>3:00 PM - 8:00 PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Myawaddy Gym?</h2>
+                <p>Experience the best fitness journey with our state-of-the-art facilities and expert guidance</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Expert Coaches</h3>
+                    <p>Professional trainers with years of experience to guide your fitness journey</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h3>Modern Equipment</h3>
+                    <p>State-of-the-art fitness equipment for all your workout needs</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Group Classes</h3>
+                    <p>Join our group sessions for motivation and community support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Flexible Timing</h3>
+                    <p>Choose from morning or evening sessions that fit your schedule</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="plans">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Plan</h2>
+                <p>Find the perfect membership plan that suits your fitness goals and budget</p>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card" data-plan="basic">
+                    <div class="plan-header">
+                        <i class="fas fa-user"></i>
+                        <h3>Basic Plan</h3>
+                        <div class="price">100,000 <span>MMK</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> Unlimited gym access</li>
+                        <li><i class="fas fa-check"></i> All equipment usage</li>
+                        <li><i class="fas fa-check"></i> Locker facilities</li>
+                        <li><i class="fas fa-times"></i> No personal coach</li>
+                        <li><i class="fas fa-times"></i> No scheduled sessions</li>
+                    </ul>
+                    <button class="btn btn-primary plan-btn" onclick="openRegistration('basic')">
+                        Choose Basic
+                    </button>
+                </div>
+
+                <div class="plan-card featured" data-plan="premium">
+                    <div class="plan-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <i class="fas fa-crown"></i>
+                        <h3>Premium Plan</h3>
+                        <div class="price">500,000 <span>MMK</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Basic features</li>
+                        <li><i class="fas fa-check"></i> Personal coach</li>
+                        <li><i class="fas fa-check"></i> Scheduled sessions</li>
+                        <li><i class="fas fa-check"></i> Nutrition guidance</li>
+                        <li><i class="fas fa-check"></i> Progress tracking</li>
+                    </ul>
+                    <button class="btn btn-primary plan-btn" onclick="openRegistration('premium')">
+                        Choose Premium
+                    </button>
+                </div>
+
+                <div class="plan-card" data-plan="group">
+                    <div class="plan-header">
+                        <i class="fas fa-users"></i>
+                        <h3>Group Plan</h3>
+                        <div class="price">1,500,000 <span>MMK</span></div>
+                        <small>(At least 3 members)</small>
+                    </div>
+                    <ul class="plan-features">
+                        <li><i class="fas fa-check"></i> All Premium features</li>
+                        <li><i class="fas fa-check"></i> Group coaching</li>
+                        <li><i class="fas fa-check"></i> Team challenges</li>
+                        <li><i class="fas fa-check"></i> Special group sessions</li>
+                    </ul>
+                    <button class="btn btn-primary plan-btn" onclick="openRegistration('group')">
+                        Choose Group
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaches Section -->
+    <section id="coaches" class="coaches">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our Expert Coaches</h2>
+                <p>Our certified trainers are here to help you achieve your fitness goals</p>
+            </div>
+            <div class="coaches-grid">
+                <div class="coach-card">
+                    <div class="coach-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Sayar Ma Paing Myint"</h3>
+                    <p class="coach-specialty">Strength Training Specialist</p>
+                    <p>Expert in building muscle mass and strength with 8+ years of experience</p>
+                    <div class="coach-stats">
+                        <span><i class="fas fa-medal"></i> 100+ Clients</span>
+                        <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <div class="coach-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Sayar La Min</h3>
+                    <p class="coach-specialty">Cardio & Weight Loss Expert</p>
+                    <p>Specialized in cardiovascular fitness and weight management programs</p>
+                    <div class="coach-stats">
+                        <span><i class="fas fa-medal"></i> 80+ Clients</span>
+                        <span><i class="fas fa-star"></i> 4.8 Rating</span>
+                    </div>
+                </div>
+                <div class="coach-card">
+                    <div class="coach-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Sayar Zin Ko</h3>
+                    <p class="coach-specialty">Functional Training Coach</p>
+                    <p>Focus on functional movement and athletic performance enhancement</p>
+                    <div class="coach-stats">
+                        <span><i class="fas fa-medal"></i> 90+ Clients</span>
+                        <span><i class="fas fa-star"></i> 4.9 Rating</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to start your fitness journey? Contact us today!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Location</h3>
+                            <p>Myawaddy, Karen State, Myanmar</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Operating Hours</h3>
+                            <p>6:00 AM - 11:00 AM<br>3:00 PM - 8:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+95 9123456789</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form onsubmit="return sendMailto()">
+                        <input type="text" id="contactName" placeholder="Your Name" required>
+                        <input type="email" id="contactEmail" placeholder="Your Email" required>
+                        <textarea id="contactMessage" placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Registration Form</h2>
+                <span class="close" onclick="closeRegistration()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="registrationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age *</label>
+                            <input type="number" id="age" name="age" min="16" max="80" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="gender">Gender *</label>
+                            <select id="gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">Selected Plan *</label>
+                            <input type="text" id="plan" name="plan" readonly>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="startDate">Start Date *</label>
+                            <input type="date" id="startDate" name="startDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="playMonth">Play Month *</label>
+                            <select id="playMonth" name="playMonth" required>
+                                <option value="">Select Duration</option>
+                                <option value="1 Month">1 Month</option>
+                                <option value="2 Months">2 Months</option>
+                                <option value="3 Months">3 Months</option>
+                                <option value="6 Months">6 Months</option>
+                                <option value="1 Year">1 Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Coach selection for Premium and Group -->
+                    <div class="form-group coach-selection" style="display: none;">
+                        <label for="coach">Choose Your Coach *</label>
+                        <select id="coach" name="coach">
+                            <option value="">Select Coach</option>
+                            <option value="Sayar Ma Paing Myint Myint">Sayar Ma Paing Myint Myint</option>
+                            <option value="Sayar La Min">Sayar La Min</option>
+                            <option value="Sayar Zin Ko">Sayar Zin Ko</option>
+                        </select>
+                    </div>
+
+                    <!-- Schedule for Premium and Group -->
+                    <div class="form-group schedule-selection" style="display: none;">
+                        <label for="schedule">Preferred Schedule *</label>
+                        <select id="schedule" name="schedule">
+                            <option value="">Select Schedule</option>
+                            <option value="6:00 AM - 8:00 AM">Morning: 6:00 AM - 8:00 AM</option>
+                            <option value="8:00 AM - 10:00 AM">Morning: 8:00 AM - 10:00 AM</option>
+                            <option value="9:00 AM - 11:00 AM">Morning: 9:00 AM - 11:00 AM</option>
+                            <option value="3:00 PM - 5:00 PM">Evening: 3:00 PM - 5:00 PM</option>
+                            <option value="5:00 PM - 7:00 PM">Evening: 5:00 PM - 7:00 PM</option>
+                            <option value="6:00 PM - 8:00 PM">Evening: 6:00 PM - 8:00 PM</option>
+                        </select>
+                    </div>
+
+                    <!-- Group members for Group plan -->
+                    <div class="group-members" style="display: none;">
+                        <label>Group Members (At least 2 additional members) *</label>
+                        <div id="groupMembersContainer">
+                            <div class="group-member">
+                                <input type="text" name="groupMember1" placeholder="Member 1 Full Name">
+                                <input type="tel" name="groupMember1Phone" placeholder="Phone Number">
+                            </div>
+                            <div class="group-member">
+                                <input type="text" name="groupMember2" placeholder="Member 2 Full Name">
+                                <input type="tel" name="groupMember2Phone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                        <button type="button" class="btn-add-member" onclick="addGroupMember()">
+                            <i class="fas fa-plus"></i> Add Another Member
+                        </button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fitnessGoals">Fitness Goals</label>
+                        <textarea id="fitnessGoals" name="fitnessGoals" rows="3" placeholder="What are your fitness goals?"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="previousExperience">Previous Experience</label>
+                        <textarea id="previousExperience" name="previousExperience" rows="3" placeholder="Describe your previous fitness experience"></textarea>
+                    </div>
+
+                    <!-- Cost and Payment Method -->
+                    <div class="form-group">
+                        <label for="cost">Cost (MMK)</label>
+                        <input type="number" id="cost" name="cost" placeholder="Enter cost in MMK">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method *</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="cash" selected>Cash</option>
+                            <option value="kbzpay">KBZPay</option>
+                            <option value="banking">Banking</option>
+                            <option value="wavemoney">Wavemoney</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeRegistration()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-user-plus"></i> Register Now
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Registration Successful!</h2>
+            <p>Thank you for joining Myawaddy Gym. Your registration has been submitted successfully.</p>
+            <div class="success-actions">
+                <button class="btn btn-primary" onclick="downloadRegistration()">
+                    <i class="fas fa-download"></i> Download Receipt
+                </button>
+                <button class="btn btn-secondary" onclick="closeSuccessModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Myawaddy Gym</span>
+                    </div>
+                    <p>Transform your body, transform your life with Myanmar's premier fitness destination.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#plans">Plans</a></li>
+                        <li><a href="#coaches">Coaches</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Myawaddy, Karen State</li>
+                        <li><i class="fas fa-phone"></i> +95 9123456789</li>
+                        <li><i class="fas fa-envelope"></i> info@myawaddygym.com</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Operating Hours</h3>
+                    <ul>
+                        <li>Morning: 6:00 AM - 11:00 AM</li>
+                        <li>Evening: 3:00 PM - 8:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Myawaddy Gym. All rights reserved.</p>
+                <a href="dashboard.html" class="admin-link">
+                    <i class="fas fa-cog"></i> Admin Dashboard
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
